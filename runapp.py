@@ -20,6 +20,10 @@ def index() -> 'html':
 def page_velo() -> 'html':
     return render_template('p_velo.html',)
 
+@app.route('/p_travel')
+def page_travel() -> 'html':
+    return render_template('p_travel.html',)
+
 
 @app.route('/index')
 def backhome() -> 'html':
