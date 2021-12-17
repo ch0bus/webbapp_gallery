@@ -1,19 +1,35 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block body %}
 
-<h2>{{ the_title }}</h2>
+{% block content %}
+<section class="hero is-fullheight" style="background-image: url('static/images/img_admin.jpg')";>
 
-<form method='POST' action='/search4'>
-<table>
-<p>Please, sign up:</p>
-<tr><td>Nick:</td><td><input name='nick' type='TEXT' width='60'></td></tr>
-<tr><td>Email:</td><td><input name='email' type='EMAIL' value=''></td></tr>
-<tr><td>Password:</td><td><input name='passwd' type='PASSWORD' value=''></td></tr>
-<tr><td>Password:</td><td><input name='confirmpasswd' type='PASSWORD' value=''></td></tr>
-</table>
-<p>When you're ready, click this button:</p>
-<p><input value='sign up!' type='SUBMIT'></p>
-</form>
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Sign Up</h3>
+    
+        <form method="POST" action="/signup">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
+                </div>
+            </div>
 
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="name" placeholder="Name" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+
+            <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+        </form>
+    </div>
+</div>
+</section>
+{% endblock %}
 {% endblock %}

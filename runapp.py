@@ -12,6 +12,18 @@ def entry_page() -> 'html':
     """Display this webapp's HTML form."""
     return render_template('index.html')
 
+@app.route('/admin')
+def adminpage() -> 'html':
+    return render_template('admin.html',)
+
+@app.route('/signin')
+def signin() -> 'html':
+    return render_template('signin.html',)
+
+@app.route('/signup')
+def signup() -> 'html':
+    return render_template('signup.html',)
+
 @app.route('/single')
 def index() -> 'html':
     return render_template('single.html',)

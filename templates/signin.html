@@ -2,18 +2,30 @@
 
 {% block body %}
 
-<h2>{{ the_title }}</h2>
+{% block content %}
+<section class="hero is-fullheight" style="background-image: url('static/images/img_admin.jpg')";>
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Login</h3>
+    <div class="box">
+        
+        <form method="POST" action="/login">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                </div>
+            </div>
 
-<form method='POST' action='/success'>
-<table>
-<p>Please, sign up:</p>
-<tr><td>Nick:</td><td><input name='nick' type='TEXT' width='60'></td></tr>
-
-<tr><td>Password:</td><td><input name='passwd' type='PASSWORD' value=''></td></tr>
-
-</table>
-<p>When you're ready, click this button:</p>
-<p><input value='sign in!' type='SUBMIT'></p>
-</form>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                </div>
+            </div>
+            
+            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+        </form>
+    </div>
+</div>
+</section>
+{% endblock %}
 
 {% endblock %}
