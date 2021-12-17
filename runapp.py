@@ -16,6 +16,10 @@ def entry_page() -> 'html':
 def index() -> 'html':
     return render_template('single.html',)
 
+@app.route('/admin')
+def adminpage() -> 'html':
+    return render_template('admin.html',)
+
 @app.route('/p_velo')
 def page_velo() -> 'html':
     return render_template('p_velo.html',)
